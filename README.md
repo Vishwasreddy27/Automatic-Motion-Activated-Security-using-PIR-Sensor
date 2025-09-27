@@ -57,13 +57,47 @@ Step 6: Troubleshoot and Refine
 Step 7: Save Your Work
 1.	Stop Simulation: Click the “Stop Simulation” button once testing is complete.
 2.	Save the Circuit: Click “Save” at the top of the screen to store your design and code for future use.
+#circuit diagram
+<img width="906" height="622" alt="image" src="https://github.com/user-attachments/assets/6e06b226-3b37-4e02-9023-4d6a26eff9b8" />
 
 
 # Code:
+~~~
+int sensorState = 0;
+
+void setup()
+{
+  pinMode(2, INPUT);
+  pinMode(13, OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void loop()
+{
+  // read the state of digital input pin 2
+  sensorState = digitalRead(2);
+  // check digital pin 2 is HIGH. if it is, set the
+  // LED on.
+  if (sensorState == HIGH) {
+    digitalWrite(13, HIGH);
+    Serial.println("Sensor activated!");
+  } else {
+    digitalWrite(13, LOW);
+     Serial.println("Sensor Deactivated!");
+  }
+  delay(10); 
+}
+~~~
 
 
 
 # Output:
+
+
+https://github.com/user-attachments/assets/9f17b64d-409a-474e-b37e-ea493d4abe44
+
+
 
 
 
